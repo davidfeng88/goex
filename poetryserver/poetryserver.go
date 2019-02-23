@@ -30,10 +30,13 @@ type config struct {
 }
 
 type poemWithTitle struct {
-	Title     string // when writing json, only uppercase fields are exported
-	Body      poetry.Poem
-	WordCount string
-	TheCount  int
+	Title            string // when writing json, only uppercase fields are exported
+	Body             poetry.Poem
+	WordCount        string
+	TheCount         int
+	VowelCount       int
+	ConsonnantCount  int
+	PunctuationCount int
 }
 
 var c config
@@ -51,38 +54,25 @@ func poemHandler(w http.ResponseWriter, r *http.Request) {
 
 	log.Printf("User requested poem %s\n", poemName)
 
+	v, c, pu := p.Stats()
+
 	// fmt.Fprintf(w, "%s\n", p) output text poem
-	// sort.Sort(p[0])
+	// sort.Sort(p[0]) Stanza is sortable
 	// output json poem
 	pwt := poemWithTitle{
 		poemName,
 		p,
-		strconv.FormatInt(int64(p.NumWords()), 16),
+		strconv.FormatInt(int64(p.NumWords()), 16), // hexdecimal
 		p.NumThe(),
+		v,
+		c,
+		pu,
 	}
 	enc := json.NewEncoder(w)
 	enc.Encode(pwt)
 }
 
 func main() {
-	// stage 1:
-	// p = Poem{{"This is a poem"}}
-	// v, c, p := p.Stats()
-	// fmt.Printf("Vowels: %d, Consonnants: %d\n", v, c)
-	// fmt.Printf("Stanzas: %d, Lines: %d\n", p.NumStanzas(), p.NumLines())
-
-	// stage 2:
-	// LoadPoem from file
-	// p, err := poetry.LoadPoem("words")
-	// if err != nil {
-	// 	fmt.Printf("Error loading poem: %s\n", err)
-	// }
-	// fmt.Printf("%s\n", p)
-	// fmt.Printf("%#v\n", p) // show the types
-
-	// stage 3:
-	// poem server
-
 	// config the logger
 	log.SetFlags(log.Lmicroseconds)
 
@@ -125,7 +115,7 @@ func main() {
 			if err != nil {
 				log.Fatalf("Failed to load poem %s\n", n)
 			}
-
+			log.Printf("Poem loaded %#v\n", cache.c[n]) // show the types
 			wg.Done()
 		}(name)
 	}
