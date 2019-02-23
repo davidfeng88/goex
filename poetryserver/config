@@ -2,6 +2,6 @@
     "addr": ":8088",
     "route": "/poem",
     "valid": [
-        "words"
+        "perfect_woman"
     ]
 }

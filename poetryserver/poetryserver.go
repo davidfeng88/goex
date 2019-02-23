@@ -54,16 +54,20 @@ func poemHandler(w http.ResponseWriter, r *http.Request) {
 	// fmt.Fprintf(w, "%s\n", p) output text poem
 	// sort.Sort(p[0])
 	// output json poem
-	pwt := poemWithTitle{poemName, p,
-		strconv.FormatInt(int64(p.NumWords()), 16), p.NumThe()}
+	pwt := poemWithTitle{
+		poemName,
+		p,
+		strconv.FormatInt(int64(p.NumWords()), 16),
+		p.NumThe(),
+	}
 	enc := json.NewEncoder(w)
 	enc.Encode(pwt)
 }
 
 func main() {
 	// stage 1:
-	// p = Poem{{"This is a poam"}}
-	// v, c := p.Stats()
+	// p = Poem{{"This is a poem"}}
+	// v, c, p := p.Stats()
 	// fmt.Printf("Vowels: %d, Consonnants: %d\n", v, c)
 	// fmt.Printf("Stanzas: %d, Lines: %d\n", p.NumStanzas(), p.NumLines())
 
@@ -93,7 +97,7 @@ func main() {
 
 	f, err := os.Open(*configFilename)
 	if err != nil {
-		log.Fatalf("Failed to open file config\n") // will os.Exit(1)
+		log.Fatalf("Failed to open file config\n") // log.Fatalf invokes os.Exit(1)
 	}
 
 	dec := json.NewDecoder(f)
@@ -116,6 +120,7 @@ func main() {
 			cache.Lock()
 			defer cache.Unlock()
 
+			log.Printf("Loading poem %s\n", n)
 			cache.c[n], err = poetry.LoadPoem(n)
 			if err != nil {
 				log.Fatalf("Failed to load poem %s\n", n)
@@ -136,13 +141,4 @@ func main() {
 
 	http.HandleFunc(c.Route, poemHandler)
 	http.ListenAndServe(c.BindAddress, nil)
-	// http://localhost:8088/poem in browser or
-	// curl http://127.0.0.1:8088/poem\?name=abc
 }
-
-/*
-// in command line
-export GOPATH=`pwd`
-go install hello
-bin/hello
-*/

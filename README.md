@@ -15,14 +15,14 @@ Introduction to Go Programming](http://shop.oreilly.com/product/0636920035305.do
 ## poetryserver
 
 Also a package used in John Graham-Cumming's [
-Introduction to Go Programming](http://shop.oreilly.com/product/0636920035305.do) course. It uses the `poetry` package, and demostrates the usages of `encoding/json`, `flag`, `log`, `net/http`, `strconv`, `sync`, `time`, etc. The server loads config file and poem file, and serves the poem.
+Introduction to Go Programming](http://shop.oreilly.com/product/0636920035305.do) course. It uses the `poetry` package, and demostrates the usages of struct, `encoding/json`, `flag`, `log`, `net/http`, `strconv`, `sync`, `time`, etc. The server loads config file and poem file, and serves the poem.
 
 To run the server:
 
 1. `go install github.com/davidfeng88/goex/poetryserver`
-2. Copy the sample config file `config`, and the poem file `words` to your `$GOPATH`
+2. Copy the sample config file `config`, and the poem file `perfect_woman` to your `$GOPATH`
 3. Whe working directory `$GOPATH`, run `bin/poetryserver`. You should see server logs in terminal.
-4. In terminal, run `curl http://127.0.0.1:8088/poem\?name=words` or go to `http://localhost:8088/poem?name=words` in browser.
+4. In terminal, run `curl http://127.0.0.1:8088/poem?name=perfect_woman` or go to `http://localhost:8088/poem?name=perfect_woman` in browser.
 
 ## gopl
 
