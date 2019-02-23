@@ -1,0 +1,7 @@
+{
+    "addr": ":8088",
+    "route": "/poem",
+    "valid": [
+        "words"
+    ]
+}
