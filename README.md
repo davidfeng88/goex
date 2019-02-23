@@ -7,15 +7,13 @@ This repo contains my exercises and experiments in Golang. If you already have G
 
 ## poetry
 
-A package used in John Graham-Cumming's [
-Introduction to Go Programming](http://shop.oreilly.com/product/0636920035305.do) course. It demostrates the basics of Golang, including types, slices, interfaces, `strings`, `fmt`, `bufio`, etc.
+A package used in John Graham-Cumming's [Introduction to Go Programming](http://shop.oreilly.com/product/0636920035305.do) course. It demostrates the basics of Golang, including types, slices, interfaces, `strings`, `fmt`, `bufio`, etc.
 
 * To run the tests: `go test github.com/davidfeng88/goex/poetry` (Use `-v` for verbose)
 
 ## poetryserver
 
-Also a package used in John Graham-Cumming's [
-Introduction to Go Programming](http://shop.oreilly.com/product/0636920035305.do) course. It uses the `poetry` package, and demostrates the usages of struct, `encoding/json`, `flag`, `log`, `net/http`, `strconv`, `sync`, `time`, etc. The server loads config file and poem file, and serves the poem.
+Also a package used in John Graham-Cumming's [Introduction to Go Programming](http://shop.oreilly.com/product/0636920035305.do) course. It uses the `poetry` package, and demostrates the usages of struct, `encoding/json`, `flag`, `log`, `net/http`, `strconv`, `sync`, `time`, etc. The server loads config file and poem file, and serves the poem.
 
 To run the server:
 

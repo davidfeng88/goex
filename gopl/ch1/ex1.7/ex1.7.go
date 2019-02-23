@@ -1,7 +1,5 @@
-// Based on fetch
-
-// Prints the content found at each specified URL.
-// use io.Copy to direct output to os.Stdout.
+// Based on fetch, prints the content found at each specified URL.
+// uses io.Copy to direct output to os.Stdout.
 package main
 
 import (

@@ -1,5 +1,4 @@
-// Based on echo2
-// Prints command line arguments and their indices
+// Based on echo2, prints command line arguments and their indices.
 package main
 
 import (

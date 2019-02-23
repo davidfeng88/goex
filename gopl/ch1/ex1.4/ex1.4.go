@@ -1,7 +1,5 @@
-// Based on dup2
-
-// Prints the count and text of lines that appear more than once
-// in the input. It reads from stdin or from a list of named files.
+// Based on dup2, prints the count and text of lines that appear more than once in the input.
+// It reads from stdin or from a list of named files.
 // If there are duplicated lines, the filename is also included.
 package main
 

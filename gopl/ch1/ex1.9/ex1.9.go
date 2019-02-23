@@ -1,6 +1,4 @@
-// Based on fetch
-
-// Prints the status at each specified URL.
+// Based on fetch, prints the status at each specified URL.
 package main
 
 import (

@@ -1,3 +1,4 @@
+// Uses the poetry package, loads config and poems from file and serve poems. It's from John Graham-Cumming's Introduction to Go Programming course.
 package main
 
 import (

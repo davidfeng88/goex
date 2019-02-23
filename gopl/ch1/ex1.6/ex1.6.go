@@ -1,6 +1,4 @@
-// Based on Lissajous
-
-// Generates GIF animations of random Lissajous figures in multiple colors.
+// Based on Lissajous, generates GIF animations of random Lissajous figures in multiple colors.
 package main
 
 import (

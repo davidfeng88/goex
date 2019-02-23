@@ -1,7 +1,4 @@
-// Based on echo3
-// Prints all of its arguments, including the first one,
-// the command itself
-
+// Based on echo3, prints all of its arguments, including the first one, the command itself.
 package main
 
 import (

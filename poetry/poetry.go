@@ -1,3 +1,7 @@
+/*
+Package poetry package demostrates the basics of Golang, including types, slices, interfaces, strings, fmt, bufio, etc.
+It's from John Graham-Cumming's Introduction to Go Programming course.
+*/
 package poetry
 
 import (

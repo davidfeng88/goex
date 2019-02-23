@@ -1,6 +1,4 @@
-// Based on Lissajous
-
-// Generates GIF animations of random Lissajous figures.
+// Based on Lissajous, generates GIF animations of random Lissajous figures.
 // Line color: green
 package main
 

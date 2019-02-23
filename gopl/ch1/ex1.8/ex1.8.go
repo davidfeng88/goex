@@ -1,7 +1,5 @@
-// Based on fetch.
-
-// Prints the content found at each specified URL.
-// Will add "http://" to url if it does not have one.
+// Based on fetch, prints the content found at each specified URL.
+// Adds "http://" to url if it does not have one.
 package main
 
 import (
